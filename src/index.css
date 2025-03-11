@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer components {
+  .neon-gradient {
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    filter: blur(100px);
+    opacity: 0.15;
+  }
+  
+  .neon-border {
+    @apply relative;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      border-radius: inherit;
+      z-index: -1;
+    }
+  }
+
+  .neon-text {
+    @apply font-bold;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s linear infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
