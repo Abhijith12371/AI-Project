@@ -1,4 +1,4 @@
-const ELEVENLABS_API_KEY = 'REDACTED';
+const ELEVENLABS_API_KEY = import.meta.env.VITE_ELEVENLABS_API_KEY;
 const VOICE_ID = '21m00Tcm4TlvDq8ikWAM'; // Default voice ID
 
 export async function textToSpeech(text: string): Promise<ArrayBuffer> {
